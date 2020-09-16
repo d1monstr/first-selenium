@@ -34,14 +34,14 @@ public class FirstTest {
     @Test
     public void exampleScenario() {
         // развернуть "Меню"
-        String insuranceButtonXPath = "//div[@class = 'navbar-collapse collapse']//a[contains(text(), 'Меню')]";
-        WebElement insuranceButton = driver.findElement(By.xpath(insuranceButtonXPath));
-        insuranceButton.click();
+        String menuButtonXPath = "//div[@class = 'navbar-collapse collapse']//a[contains(text(), 'Меню')]";
+        WebElement menuButton = driver.findElement(By.xpath(menuButtonXPath));
+        menuButton.click();
 
         // выбрать пункт подменю - "ДМС"
-        String travellersInsuranceButtonXPath = "//a[contains(text(), 'ДМС')]";
-        WebElement travellersInsuranceButton = driver.findElement(By.xpath(travellersInsuranceButtonXPath));
-        travellersInsuranceButton.click();
+        String dmsButtonXPath = "//a[contains(text(), 'ДМС')]";
+        WebElement dmsButton = driver.findElement(By.xpath(dmsButtonXPath));
+        dmsButton.click();
 
         // проверка открытия страницы "Добровольное медицинское страхование"
         String pageTitleXPath = "//h1[contains(text(), 'добровольное медицинское страхование')]";
@@ -51,10 +51,10 @@ public class FirstTest {
                 "ДМС — добровольное медицинское страхование", pageTitle.getText());
 
         // нажать кнопку "Отправить заявку"
-        String checkoutOnlineXPath = "//a[contains(text(), 'Отправить заявку')]";
-        WebElement checkoutOnlineButton = driver.findElement(By.xpath(checkoutOnlineXPath));
-        waitUtilElementToBeClickable(checkoutOnlineButton);
-        checkoutOnlineButton.click();
+        String requestXPath = "//a[contains(text(), 'Отправить заявку')]";
+        WebElement requestButton = driver.findElement(By.xpath(requestXPath));
+        waitUtilElementToBeClickable(requestButton);
+        requestButton.click();
 
         // проверка открытия страницы "Заявка на добровольное медицинское страхование"
         String pageTitle1XPath = "//b[contains(text(), 'Заявка на добровольное медицинское страхование')]";
@@ -89,8 +89,8 @@ public class FirstTest {
         }
 
         // кликнуть по кнопке "Отправить"
-        WebElement continueButton = driver.findElement(By.xpath("//button[contains(text(), 'Отправить')]"));
-        continueButton.click();
+        WebElement sendButton = driver.findElement(By.xpath("//button[contains(text(), 'Отправить')]"));
+        sendButton.click();
 
         // проверить сообщение об ошибке
         String errorAlertXPath = "//input[@name = 'Email']/..//span[@class = 'validation-error-text']";
